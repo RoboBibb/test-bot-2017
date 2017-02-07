@@ -16,6 +16,7 @@
 class Robot: public frc::IterativeRobot {
 private:
 	RobotDrive drive;
+	Joystick stickojoy;
 	frc::LiveWindow* lw = LiveWindow::GetInstance();
 	frc::SendableChooser<std::string> chooser;
 	const std::string autoNameDefault = "Default";
@@ -50,7 +51,15 @@ public:
 
 };
 
-
+namespace utils{
+	float removeghost(float ghost){
+		if(ghost<.15&&ghost>-.15){
+			return 0.0f;
+		}else{
+			return ghost;
+		}
+	}
+}
 
 
 
