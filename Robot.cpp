@@ -1,5 +1,5 @@
 #include "Robot.hpp"
-Robot::Robot(): drive(2,3,0,1) {
+Robot::Robot(): drive(2,3,0,1),stickojoy(0) {
 	drive.SetExpiration(0.1);
 }
 void Robot::RobotInit() {
@@ -45,7 +45,7 @@ void Robot::TeleopInit() {
 }
 
 void Robot::TeleopPeriodic() {
-
+	drive.ArcadeDrive(stickojoy);
 }
 
 void Robot::TestPeriodic() {
