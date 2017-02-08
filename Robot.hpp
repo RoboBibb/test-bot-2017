@@ -52,9 +52,9 @@ public:
 };
 
 namespace utils{
-	float removeghost(float ghost){
+	double removeGhost(double ghost){
 		if(ghost<.15&&ghost>-.15){
-			return 0.0f;
+			return 0.0;
 		}else{
 			return ghost;
 		}
