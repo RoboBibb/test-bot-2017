@@ -45,7 +45,7 @@ void Robot::TeleopInit() {
 }
 
 void Robot::TeleopPeriodic() {
-	drive.ArcadeDrive(stickojoy);
+	drive.ArcadeDrive(utils::removeGhost(stickojoy.GetRawAxis(1)),utils::removeGhost(-stickojoy.GetRawAxis(4)));
 }
 
 void Robot::TestPeriodic() {
